@@ -1,11 +1,12 @@
-import { defineStore } from 'pinia';
 import { ref } from 'vue';
+import { defineStore } from 'pinia';
+import type { UserRole } from '../constants/roles';
 
 export const useAuthStore = defineStore('auth', () => {
   const isAuthenticated = ref(false);
-  const role = ref<'admin' | 'helpdesk' | 'client' | null>(null);
+  const role = ref<UserRole | null>(null);
 
-  function login(selectedRole: typeof role.value) {
+  function login(selectedRole: UserRole) {
     isAuthenticated.value = true;
     role.value = selectedRole;
   }
@@ -16,4 +17,6 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   return { isAuthenticated, role, login, logout };
-});
+    }, {
+    persist: true
+  });
