@@ -22,3 +22,22 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Docker
+docker-compose.override.yml
+**/.docker/
+**/Dockerfile*
+
+# Tailwind
+tailwind.config.js.backup*
+
+# Vite
+.vite/
+
+# Build archives
+*.tar.gz
+*.zip
+coverage/
+
+# OS
+Thumbs.db
