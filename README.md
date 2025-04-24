@@ -58,7 +58,7 @@ docker compose up
 ## 👤 Auteur
 
 [Gaëtan renaud](https://github.com/garenaud)  
-Développeur web junior – Étudiant à 42 Lausanne
+Développeur web junior – 42 Lausanne
 
 ---
 
