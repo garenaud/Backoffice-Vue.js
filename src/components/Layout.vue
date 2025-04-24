@@ -1,45 +1,102 @@
 <template>
     <div class="flex h-screen">
-        <aside :class="['transition-all duration-300 bg-gray-100 p-4', isMenuOpen ? 'w-64' : 'w-16']">
-        <button @click="toggleMenu" class="mb-4 text-blue-600">
+      <aside :class="['transition-all duration-300 bg-[#04A4D5] text-white p-4 flex flex-col', isMenuOpen ? 'w-64' : 'w-16']">
+        <div class="mb-6 flex justify-center">
+          <button @click="toggleMenu" class="text-white text-lg">
             {{ isMenuOpen ? '«' : '»' }}
-        </button>
-        <div v-if="isMenuOpen">
-            <h2 class="text-xl font-bold mb-4">Menu</h2>
-            <ul class="space-y-2 text-left">
-            <li><router-link to="/dashboard">Dashboard</router-link></li>
-            <li v-if="role === Roles.ADMIN || role === Roles.HELPDESK"><router-link to="/clients">Liste des clients</router-link></li>
-            <li v-if="role === Roles.CLIENT"><router-link to="/documents">Mes documents</router-link></li>
-            <li v-if="role === Roles.HELPDESK"><router-link to="/mutations">Mutations</router-link></li>
-            <li v-if="role === Roles.ADMIN"><router-link to="/admin/users">Gestion des utilisateurs</router-link></li>
-            </ul>
-            <button @click="logout" class="mt-4 text-red-500">Déconnexion</button>
+          </button>
         </div>
-        </aside>
+  
+        <div class="flex-1">
+          <h2 v-if="isMenuOpen" class="text-xl font-bold mb-6 text-left">Menu</h2>
+          <ul class="list-none space-y-4">
+            <li>
+              <router-link
+                to="/dashboard"
+                class="flex items-center gap-2 hover:text-white"
+                :class="isMenuOpen ? 'justify-start pl-2' : 'justify-center'"
+              >
+                <Home class="w-5 h-5" />
+                <span v-if="isMenuOpen">Dashboard</span>
+              </router-link>
+            </li>
+            <li v-if="role === Roles.ADMIN || role === Roles.HELPDESK">
+              <router-link
+                to="/clients"
+                class="flex items-center gap-2 hover:text-white"
+                :class="isMenuOpen ? 'justify-start pl-2' : 'justify-center'"
+              >
+                <Users class="w-5 h-5" />
+                <span v-if="isMenuOpen">Liste des clients</span>
+              </router-link>
+            </li>
+            <li v-if="role === Roles.CLIENT">
+              <router-link
+                to="/documents"
+                class="flex items-center gap-2 hover:text-white"
+                :class="isMenuOpen ? 'justify-start pl-2' : 'justify-center'"
+              >
+                <FileText class="w-5 h-5" />
+                <span v-if="isMenuOpen">Mes documents</span>
+              </router-link>
+            </li>
+            <li v-if="role === Roles.HELPDESK">
+              <router-link
+                to="/mutations"
+                class="flex items-center gap-2 hover:text-white"
+                :class="isMenuOpen ? 'justify-start pl-2' : 'justify-center'"
+              >
+                <Settings class="w-5 h-5" />
+                <span v-if="isMenuOpen">Mutations</span>
+              </router-link>
+            </li>
+            <li v-if="role === Roles.ADMIN">
+              <router-link
+                to="/admin/users"
+                class="flex items-center gap-2 hover:text-white"
+                :class="isMenuOpen ? 'justify-start pl-2' : 'justify-center'"
+              >
+                <Users class="w-5 h-5" />
+                <span v-if="isMenuOpen">Gestion des utilisateurs</span>
+              </router-link>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="mt-6">
+          <button @click="logout" class="flex items-center gap-2 text-red-100 w-full"
+                  :class="isMenuOpen ? 'justify-start pl-2' : 'justify-center'">
+            <LogOut class="w-5 h-5" />
+            <span v-if="isMenuOpen">Déconnexion</span>
+          </button>
+        </div>
+      </aside>
+  
       <main class="flex-1 p-10 overflow-y-auto bg-white">
-            <router-view />
+        <router-view />
       </main>
     </div>
   </template>
   
   <script setup lang="ts">
-  import { useAuthStore } from '../stores/auth';
-  import { useRouter } from 'vue-router';
-  import { Roles } from '../constants/roles';
-  import { ref } from 'vue';
-
-  const isMenuOpen = ref(true);
-  const auth = useAuthStore();
-  const router = useRouter();
-  const role = auth.role;
+  import { ref } from 'vue'
+  import { useRouter } from 'vue-router'
+  import { useAuthStore } from '../stores/auth'
+  import { Roles } from '../constants/roles'
+  import { Home, Users, FileText, Settings, LogOut } from 'lucide-vue-next'
+  
+  const isMenuOpen = ref(true)
+  const auth = useAuthStore()
+  const router = useRouter()
+  const role = auth.role
   
   function logout() {
-    auth.logout();
-    router.push('/login');
+    auth.logout()
+    router.push('/login')
   }
-    
+  
   function toggleMenu() {
-    isMenuOpen.value = !isMenuOpen.value;
+    isMenuOpen.value = !isMenuOpen.value
   }
   </script>
   
