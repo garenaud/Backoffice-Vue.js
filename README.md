@@ -1,8 +1,6 @@
 # Backoffice Vue.js
 
-Ce projet est une démo de backoffice développé en Vue.js 3 avec Tailwind CSS, utilisant Docker pour simplifier l’installation et l’exécution.  
-Il a été conçu pour répondre à une offre de stage, portant sur la refonte d’un outil d’administration interne.
-
+Ce projet est une démo de backoffice développé en Vue.js 3 avec Tailwind CSS, utilisant Docker pour simplifier l’installation et l’exécution.
 ---
 
 ## 🚀 Objectifs
