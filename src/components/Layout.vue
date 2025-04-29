@@ -13,13 +13,13 @@
           </button>
         </div>
   
-        <nav class="list-none flex-1 mt-6 space-y-10">
-          <h2 v-if="isMenuOpen" class="list-none text-xl font-bold mb-6">Menu</h2>
+        <nav class="text-white list-none flex-1 mt-6 space-y-10">
+          <h2 v-if="isMenuOpen" class="text-white list-none text-xl font-bold mb-6">Menu</h2>
           <!-- <ul class="list-none space-y-4"> -->
             <li>
               <router-link
                 to="/dashboard"
-                class="flex items-center gap-2 w-full hover:text-white mt-4"
+                class="text-white flex items-center gap-2 w-full hover:text-white mt-4"
                 :class="isMenuOpen ? 'justify-start pl-2' : 'justify-center'"
               >
                 <Home class="w-5 h-5" />
