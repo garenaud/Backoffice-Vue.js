@@ -57,9 +57,3 @@ docker compose up
 
 [Gaëtan renaud](https://github.com/garenaud)  
 Développeur web junior – 42 Lausanne
-
----
-
-## 📝 Licence
-
-Ce projet est privé et destiné à une présentation dans le cadre d’un processus de recrutement.

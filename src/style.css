@@ -22,13 +22,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--color-background);
-  /* color: #213547; */
   margin: 0;
 }
 
 a {
   font-weight: 500;
-  /* color: var(--color-background); */
   text-decoration: inherit;
 }
 a:hover {
