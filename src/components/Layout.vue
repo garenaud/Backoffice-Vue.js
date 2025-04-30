@@ -1,26 +1,22 @@
 <template>
     <div class="flex h-screen">
-        <aside
-        :class="[
-            'transition-all duration-300 bg-[#04A4D5] text-white flex flex-col',
-            isMenuOpen ? 'w-64 px-4' : 'w-14 px-0'
-        ]"
-        class="!pl-0 !ml-0"
-        >
+      <aside :class="[
+        'transition-all duration-300 bg-[#04A4D5] text-white flex flex-col',
+        isMenuOpen ? 'w-64 px-5' : 'w-16 px-0'
+      ]">
         <div class="mt-4 flex justify-center">
           <button @click="toggleMenu" class="text-white text-lg p-2 rounded border border-white">
             {{ isMenuOpen ? '«' : '»' }}
           </button>
         </div>
   
-        <nav class="text-white list-none flex-1 mt-6 space-y-10">
+        <nav class="text-white list-none flex-1 mt-6 space-y-10 px-5">
           <h2 v-if="isMenuOpen" class="text-white list-none text-xl font-bold mb-6">Menu</h2>
-          <!-- <ul class="list-none space-y-4"> -->
             <li>
               <router-link
                 to="/dashboard"
                 class="text-white flex items-center gap-2 w-full hover:text-white mt-4"
-                :class="isMenuOpen ? 'justify-start pl-2' : 'justify-center'"
+                :class="isMenuOpen ? 'px-5' : 'justify-center'"
               >
                 <Home class="w-5 h-5" />
                 <span v-if="isMenuOpen">Dashboard</span>

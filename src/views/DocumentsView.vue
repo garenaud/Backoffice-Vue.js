@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import type { Document } from '../types/document'
+
+const documents = ref<Document[]>([])
+
+onMounted(async () => {
+  const res = await fetch('/src/data/documents.json')
+  documents.value = await res.json()
+})
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr)
+  return date.toLocaleDateString('fr-CH')
+}
+</script>
+
 <template>
     <div>
       <h1 class="text-2xl font-bold mb-4">Mes documents</h1>
@@ -23,20 +40,4 @@
       </table>
     </div>
   </template>
-  
-  <script setup lang="ts">
-  import { ref, onMounted } from 'vue';
-  
-  const documents = ref([]);
-  
-  onMounted(async () => {
-    const res = await fetch('/src/data/documents.json');
-    documents.value = await res.json();
-  });
-  
-  function formatDate(dateStr: string): string {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString('fr-CH');
-  }
-  </script>
   
