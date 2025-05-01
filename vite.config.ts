@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), tailwindcss()],
   server: {
-    host: '0.0.0.0',       // 👈 nécessaire pour exposer à l'extérieur du conteneur
+    host: '0.0.0.0',
     port: 8080,
     watch: {
-      usePolling: true     // 👈 pour que le hot reload fonctionne depuis un volume monté
+      usePolling: true
     }
   }
 })
