@@ -3,7 +3,7 @@
       <div class="p-8 max-w-md bg-white rounded shadow">
         <h1 class="text-2xl font-bold mb-4">Connexion</h1>
         <label class="block mb-4 text-center">Choisir un rôle :</label>
-        <select v-model="selectedRole" class="mb-10 p-10 border mx-auto block rounded-full w-full text-center">
+        <select v-model="selectedRole" class="mb-10 p-2 border mx-auto block rounded-full w-full text-center">
           <option value="admin">Admin</option>
           <option value="helpdesk">Helpdesk</option>
           <option value="client">Client</option>
