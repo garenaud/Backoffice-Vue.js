@@ -1,19 +1,10 @@
 <template>
   <div class="flex h-screen overflow-hidden">
-    <!-- Sidebar -->
-    <aside
-      :class="[
-        'fixed top-0 left-0 h-screen bg-[#04A4D5] text-white z-40 transition-all duration-300 flex flex-col',
-        isMenuOpen ? 'w-full sm:w-64' : 'w-16',
-      ]"
-    >
-      <Sidebar :isMenuOpen="isMenuOpen" @toggle="toggleMenu" />
-    </aside>
+    <Sidebar :isMenuOpen="isMenuOpen" @toggle="toggleMenu" />
 
-    <!-- Main content wrapper -->
     <div :class="[
       'flex flex-col flex-1 transition-all duration-300',
-      isMenuOpen ? 'sm:ml-64 ml-16' : 'ml-16'
+      isMenuOpen ? 'sm:ml-64' : ''
     ]">
       <Header />
       <main class="flex-1 overflow-y-auto bg-gray-50 p-4 sm:p-6">

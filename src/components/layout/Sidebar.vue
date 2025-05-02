@@ -2,8 +2,8 @@
     <div class="flex h-screen">
       <aside
         :class="[
-          'fixed sm:static top-0 left-0 h-screen bg-[#04A4D5] text-white z-40 transition-all duration-300 flex flex-col',
-          isMenuOpen ? 'w-full sm:w-64 px-4' : 'w-16 px-0'
+        'bg-[#04A4D5] text-white transition-all duration-300 flex flex-col',
+        isMenuOpen ? 'w-64' : 'w-16'
         ]"
       >
         <div class="mt-4 flex justify-center sm:justify-end px-2">
