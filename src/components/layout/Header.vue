@@ -2,7 +2,8 @@
     <header class="sticky top-0 z-30 w-full border-b border-gray-200 bg-white shadow-sm">
       <div class="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <div class="flex items-center gap-4">
-          <h1 class="text-xl font-semibold text-gray-700">Tableau de bord</h1>
+            <h1 class="text-sm sm:text-sm font-semibold text-gray-700">Tableau de bord</h1>
+
         </div>
         <div class="flex items-center gap-4">
           <button class="relative">

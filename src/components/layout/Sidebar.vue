@@ -1,20 +1,17 @@
 <template>
     <div class="flex h-screen">
-      <!-- Sidebar -->
       <aside
         :class="[
           'fixed sm:static top-0 left-0 h-screen bg-[#04A4D5] text-white z-40 transition-all duration-300 flex flex-col',
           isMenuOpen ? 'w-full sm:w-64 px-4' : 'w-16 px-0'
         ]"
       >
-        <!-- Toggle button -->
         <div class="mt-4 flex justify-center sm:justify-end px-2">
           <button @click="toggleMenu" class="text-white text-lg p-2 border border-white rounded">
             {{ isMenuOpen ? '«' : '»' }}
           </button>
         </div>
   
-        <!-- Menu items -->
         <nav class="mt-6 flex-1 overflow-y-auto">
           <h2 v-if="isMenuOpen" class="text-xl font-bold mb-6 px-4">Menu</h2>
           <ul class="list-none p-2 space-y-2">
@@ -71,8 +68,7 @@
           </ul>
         </nav>
   
-        <!-- Logout -->
-        <div class="border-t border-white px-4 pt-4">
+        <div class="border-t border-white pt-4">
           <button
             @click="logout"
             class="flex items-center gap-2 text-red-100 w-full hover:text-white"

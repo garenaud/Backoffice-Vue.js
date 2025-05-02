@@ -1,13 +1,4 @@
-<script setup lang="ts">
-import { onMounted } from 'vue'
-import { useClientStore } from '../stores/client'
 
-const clientStore = useClientStore()
-
-onMounted(() => {
-  clientStore.fetchClients()
-})
-</script>
 
 <template>
   <div>
@@ -37,3 +28,14 @@ onMounted(() => {
     </table>
   </div>
 </template>
+
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { useClientStore } from '../stores/client'
+
+const clientStore = useClientStore()
+
+onMounted(() => {
+  clientStore.fetchClients()
+})
+</script>

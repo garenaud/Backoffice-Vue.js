@@ -53,14 +53,15 @@ const routes = [
             name: 'UserManagement',
             component: UserManagementView,
             meta: { roles: [Roles.ADMIN] }
+          },
+          { path: '/clients', 
+            name: 'Clients', 
+            component: ClientListView,
+            meta: { roles: [Roles.ADMIN, Roles.HELPDESK] } 
           }
     ]
   },
-  { path: '/clients', 
-    name: 'Clients', 
-    component: ClientListView,
-    meta: { roles: [Roles.ADMIN, Roles.HELPDESK] } 
-  }
+
 ];
 
 const router = createRouter({
